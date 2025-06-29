@@ -1,7 +1,25 @@
 <head>
 <link rel="stylesheet" href="style.css">
 </head>
+/* ==============================
+/* キャッシュ、オフラインで使用するためにservice-worker.js というファイルを登録
+/* ============================== */
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(function (registration) {
+          console.log('ServiceWorker registered: ', registration.scope);
+        }, function (err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+</script>
 
+/* ==============================
+/* メインのHTML
+/* ============================== */
 <div class="tab-container">
   <div class="tab-wrap">
     <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-button" for="TAB02-01">7/25</label>
