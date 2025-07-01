@@ -1,4 +1,18 @@
 /* ==============================
+/* 全体の設定
+/* ============================== */
+body {
+	background: WhiteSmoke;
+  font-family: sans-serif;
+	font-size: medium;
+	margin: 10px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* ==============================
 /* タブボタンの設定
 /* ============================== */
 
@@ -43,7 +57,7 @@
 	flex: 1 1 auto; /* タブが均等に幅をとる */
   order: -1; /* コンテンツより上に表示 */
 	padding: .7em 1em; /* タブの内側余白 */
- border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
+	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
   position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
 	font-weight: bold; /* 文字を太字に */
@@ -97,7 +111,7 @@
     width: 100%;
     left:0;
     position: -webkit-sticky;
-	position: sticky; /* コンテンツエリアの位置を固定 */
+		position: sticky; /* コンテンツエリアの位置を固定 */
   }
 /* コンテンツが左右に動く仕組み */
   /* 1.アクティブなタブより前のコンテンツ */
@@ -124,19 +138,6 @@
 
 
 /* ==============================
-/* 全体の設定
-/* ============================== */
-body {
-	background: WhiteSmoke;
-  font-family: sans-serif;
-	margin: 10px;
-}
-
-* {
-	box-sizing: border-box;
-}
-
-/* ==============================
 /* 幅と高さの設定
 /* ============================== */
 
@@ -153,7 +154,6 @@ body {
 	overflow-x: auto;
 	position: relative;
 }
-
 
 /* ==============================
 /* 地図の設定
