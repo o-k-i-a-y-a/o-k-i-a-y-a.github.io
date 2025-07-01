@@ -5,9 +5,9 @@
 /* タブバー部分の設定 */
 .tab-wrap {
 	background: White; /* 背景色 */
-	width: 1000px; /* コンテナの最大幅を指定 */
-	/*width:100%;
-	min-width:1000px;*/
+	/*width: 1000px; /* コンテナの最大幅を指定 */
+	*width:100%;
+	min-width:1500px;*
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -48,7 +48,7 @@
 	position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
 	font-weight: bold; /* 文字を太字に */
-	font-size: 130%!important; /* 文字を大きく */
+	font-size: 150%!important; /* 文字を大きく */
 	color: var(--active-tab-color); /* タブの文字色 */   
 	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s; /*変化を滑らかに*/
 	user-select: none; /* テキストの範囲選択禁止 */ 
@@ -66,18 +66,18 @@
 /* タブの三角形が左右に動く仕組み */
   /* 1.アクティブなタブより前のボタン */
   .tab-button::after {
-    position: absolute; /* 三角形をタブ内の特定位置に配置 */
-    bottom: -8px; /* 三角形をタブの下に表示 */
-    left: 50%; /* 中央寄せの調整 */
-    width: 18px; /* 三角形の幅 */
-    height: 9px; /* 三角形の高さ */
-    background-color: var(--active-tab-color); /* 三角形の背景色 */
-    content: ''; /* 擬似要素の内容（空） */
-    clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
-  	opacity: 0; /* 透明度を透明に。フェード用 */
-    display: block;
-    transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;  /*変化を滑らかに*/
-    transform: translateX(100%);  /*ヌルヌル動かす用*/
+	  position: absolute; /* 三角形をタブ内の特定位置に配置 */
+	  bottom: -8px; /* 三角形をタブの下に表示 */
+	  left: 50%; /* 中央寄せの調整 */
+	  width: 18px; /* 三角形の幅 */
+	  height: 9px; /* 三角形の高さ */
+	  background-color: var(--active-tab-color); /* 三角形の背景色 */
+	  content: ''; /* 擬似要素の内容（空） */
+	  clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
+	  opacity: 0; /* 透明度を透明に。フェード用 */
+	  display: block;
+	  transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;  /*変化を滑らかに*/
+	  transform: translateX(100%);  /*ヌルヌル動かす用*/
 	  z-index: 1
   }
   /* 2.アクティブなタブより後のボタン(アクティブなタブ含む) */
