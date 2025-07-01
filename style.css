@@ -55,11 +55,11 @@
 	-webkit-tap-highlight-color: transparent; /* リンクの強調をなくす */
 }
 
-#TAB02-03::after{
+.sp {
 	width:100%;
 }
 
-:nth-child(-n + 3 of tab-button) {
+/*:nth-child(-n + 3 of tab-button) {
 	content: '';
 	width: 100%;	
 	order:1;
