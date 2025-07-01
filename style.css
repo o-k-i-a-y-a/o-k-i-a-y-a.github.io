@@ -19,7 +19,7 @@
 .tab-wrap::before {
 	content: '';
 	height: 0;
-	order: 2;/*1; /* コンテンツより下に表示 */
+	order: 2;/*1; /* コンテンツを下に表示 */
 	width: 100%;
 }
 
@@ -27,7 +27,7 @@
 .tab-wrap::after {
 	content: '';
 	height: 20px;
-	order: 0;/*-1; /* コンテンツより上に表示 */
+	order: 0; /*-1; /* コンテンツより上に表示 */
 	width: 100%;
 }
 
@@ -36,7 +36,14 @@
 	display: none; /* 実際のラジオボタンは非表示 */
 	height: 20%;
 }
-
+/* タブの改行用 */
+.tab-switch::after {
+    content: '';
+    width: 100%;
+}
+.tab-switch:nth-child(n+4) {
+    order: 1;
+}
 /* 各タブボタンのスタイル設定 */
 .tab-button {
 	--active-tab-color:#757F96; /*選択したタブの色*/  
