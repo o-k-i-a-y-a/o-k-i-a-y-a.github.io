@@ -27,8 +27,51 @@
   <div class="tab-wrap">
     <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-button" for="TAB02-01">7/25</label>
     <div class="tab-content">
-        コンテンツ１
+         <!-- =============================　地図のHTML============================== -->
+           <div id="map-wrapper">
+                <div id="map-inner">
+                     <img id="map" src="image/map_easy3.png" alt="USJ Map" />
+               
+                     <!-- 🎯 Marker with Popup -->
+                     <img
+                       src="image/ライド.png"
+                       class="marker"
+                       style="top: 40%; left: 30%;"
+                       onclick="togglePopup('popup1')"
+                     />
+                     <div class="popup" id="popup1" style="top: 40%; left: 30%;">
+                       <img class="logo" src="image/logo.png" alt="スパイダーマン" />
+                       <a href="pages/spiderman.html">詳細ページへ</a>
+                     </div>
+                   </div>
+                 </div>
+               
+                 <!-- panzoom.js 読み込み -->
+                 <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+                 <script>
+                   const panzoom = Panzoom(document.getElementById('map-inner'), {
+                     maxScale: 5,
+                     minScale: 1,
+                     contain: 'outside'
+                   });
+                   document.getElementById('map-wrapper').addEventListener('wheel', panzoom.zoomWithWheel);
+               
+                   function togglePopup(id) {
+                     document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+                     const popup = document.getElementById(id);
+                     if (popup) popup.style.display = 'block';
+                   }
+               
+                   // タップ外ポップ非表示
+                   document.addEventListener('click', (e) => {
+                     if (!e.target.classList.contains('marker')) {
+                       document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+                     }
+                   });
+                 </script>
+         <!-- ============================== -->
     </div>
+       
     <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-button" for="TAB02-02">7/26</label>
     <div class="tab-content">
         コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２
@@ -39,6 +82,7 @@
        コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３
     </div>
 
+    <div class="sp"> </div>
     
     <input id="TAB02-09" type="radio" name="TAB02" class="tab-switch" /><label class="tab-button" for="TAB02-09">地図</label>
     <div class="tab-content">
