@@ -130,7 +130,8 @@
 /* ============================== */
 body {
 	background: WhiteSmoke;
-  font-family: sans-serif;
+	font-family: sans-serif;
+	font-size: medium;
 	margin: 10px;
 }
 
