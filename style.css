@@ -19,7 +19,7 @@
 .tab-wrap::before {
 	content: '';
 	height: 0;
-	order: 1; /* コンテンツより下に表示 */
+	order: 2;/*1; /* コンテンツより下に表示 */
 	width: 100%;
 }
 
@@ -27,7 +27,7 @@
 .tab-wrap::after {
 	content: '';
 	height: 20px;
-	order: -1; /* コンテンツより上に表示 */
+	order: 0;/*-1; /* コンテンツより上に表示 */
 	width: 100%;
 }
 
@@ -42,7 +42,7 @@
 	--active-tab-color:#757F96; /*選択したタブの色*/  
 	cursor: pointer;/* ホバー時にポインター表示 */
 	flex: 1 1 auto; /* タブが均等に幅をとる */
-	order: -1; /* コンテンツより上に表示 */
+	order: 0;/*-1; /* コンテンツより上に表示 */
 	padding: .7em 1em; /* タブの内側余白 */
 	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
 	position: relative; /* ::beforeの絶対位置指定に使用 */
@@ -120,7 +120,7 @@
   .tab-switch:checked + .tab-button + .tab-content {
 	  height: auto; /* 内容に合わせて高さを調整 */
 	  opacity: 1; /* 透明度を不透明に。フェード用 */
-	  order: 1; /* 並び順を最後尾へ */
+	  order: 2;/*1; /* 並び順を最後尾へ */
 	  pointer-events:auto; /* 誤動作防止の解除 */
 	  transform: translateX(0); /*ヌルヌル動かす用*/
   }
