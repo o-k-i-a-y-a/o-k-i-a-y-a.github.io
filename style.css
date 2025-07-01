@@ -8,8 +8,8 @@
 .tab-wrap {
   background: White; /* 背景色 */
   width: 1000px; /* コンテナの最大幅を指定 */
-  width:100%;
-  /*min-width:1000px;*/
+  /*width:100%;*/
+  min-width:1000px;
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -45,7 +45,7 @@
 	flex: 1 1 auto; /* タブが均等に幅をとる */
   order: -1; /* コンテンツより上に表示 */
 	padding: .7em 1em; /* タブの内側余白 */
-	height: 5%;
+	height: 50%;
 	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
   position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
