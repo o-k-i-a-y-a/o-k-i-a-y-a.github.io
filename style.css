@@ -19,7 +19,7 @@
 .tab-wrap::before {
 	content: '';
 	height: 0;
-	order: 0;/*1; /* コンテンツを下に表示 */
+	order: 1; /* コンテンツを下に表示 */
 	width: 100%;
 }
 
