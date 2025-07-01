@@ -63,6 +63,33 @@
     color: #fff; /* ホバー/選択時の文字色 */
 }
 
+/* タブの三角形が左右に動く仕組み */
+  /* 1.アクティブなタブより前のボタン */
+  .tab-button::after {
+    position: absolute; /* 三角形をタブ内の特定位置に配置 */
+    bottom: -8px; /* 三角形をタブの下に表示 */
+    left: 50%; /* 中央寄せの調整 */
+    width: 18px; /* 三角形の幅 */
+    height: 9px; /* 三角形の高さ */
+    background-color: var(--active-tab-color); /* 三角形の背景色 */
+    content: ''; /* 擬似要素の内容（空） */
+    clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
+  	opacity: 0; /* 透明度を透明に。フェード用 */
+    display: block;
+    transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;  /*変化を滑らかに*/
+    transform: translateX(100%);  /*ヌルヌル動かす用*/
+	  z-index: 1
+  }
+  /* 2.アクティブなタブより後のボタン(アクティブなタブ含む) */
+  .tab-switch:checked ~ .tab-button::after {
+    transform: translateX(-150%); /*ヌルヌル動かす用*/
+  }
+  /* 3.アクティブなタブのボタン */
+  .tab-switch:checked + .tab-button::after {
+    opacity: 1; /* 透明度を不透明に。フェード用 */
+    transform: translateX(-50%);/* 三角形の中央位置調整 */
+  }
+
 
 /* ==============================
 /* 全体の設定
