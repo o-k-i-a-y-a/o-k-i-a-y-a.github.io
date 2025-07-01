@@ -59,6 +59,12 @@
 	width:100%;
 }
 
+:nth-child(-n + 3 of tab-button) {
+	content: '';
+	width: 100%;	
+	order:1;
+}
+
 /* タブのホバーおよび選択時の色 */
 .tab-button:hover,
 .tab-switch:checked + .tab-button{
