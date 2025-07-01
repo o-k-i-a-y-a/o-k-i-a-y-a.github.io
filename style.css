@@ -6,15 +6,14 @@
 .tab-wrap {
 	background: White; /* 背景色 */
 	/*width: 1000px; /* コンテナの最大幅を指定 */
-	min-width:100%;
-	/*min-width:3000px;*/
+	width:100%;
+	min-width:3000px;
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
 	gap: 0 5px; /* タブ間の余白 */
 	margin: auto; /* コンテナの中央寄せ */
 	/*overflow: visible;*/
-	bottom:0%
 }
 
 .tab-wrap::before {
@@ -68,10 +67,10 @@
   /* 1.アクティブなタブより前のボタン */
   .tab-button::after {
 	  position: absolute; /* 三角形をタブ内の特定位置に配置 */
-	  top: -8px; /* 三角形をタブの下に表示 */
+	  bottom: -8px; /* 三角形をタブの下に表示 */
 	  left: 50%; /* 中央寄せの調整 */
 	  width: 18px; /* 三角形の幅 */
-	  height: -9px; /* 三角形の高さ */
+	  height: 9px; /* 三角形の高さ */
 	  background-color: var(--active-tab-color); /* 三角形の背景色 */
 	  content: ''; /* 擬似要素の内容（空） */
 	  clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
@@ -98,10 +97,8 @@
   .tab-content {
 	  font-size: 100%!important; /* 文字を標準に */
 	  padding: 0 20px;
-	  margin-bottom: 40px;
 	  width: 100%;
 	  left:0;
-	  top:0;
 	  position: -webkit-sticky;
 	  position: sticky; /* コンテンツエリアの位置を固定 */
   }
@@ -883,9 +880,9 @@ body {
 /* タブバー部分の設定 */
 .tab-wrap {
   background: White; /* 背景色 */
-  width: 1000px; /* コンテナの最大幅を指定 */
-  /*width:100%;
-  min-width:1000px;*/
+  /*width: 1000px; /* コンテナの最大幅を指定 */
+  min-width:100%;
+  /*min-width:1000px;*/
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -912,6 +909,7 @@ body {
 /*ラジオボタンの非表示設定*/
 .tab-switch {
 	display: none; /* 実際のラジオボタンは非表示 */
+	height:40px;
 }
 
 /* 各タブボタンのスタイル設定 */
@@ -919,13 +917,15 @@ body {
   --active-tab-color:#757F96; /*選択したタブの色*/  
   cursor: pointer;/* ホバー時にポインター表示 */
 	flex: 1 1 auto; /* タブが均等に幅をとる */
-  order: -1; /* コンテンツより上に表示 */
+	order: -1; /* コンテンツより上に表示 */
+	height:40px;
 	padding: .7em 1em; /* タブの内側余白 */
- border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
-  position: relative; /* ::beforeの絶対位置指定に使用 */
+	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
+	position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
 	font-weight: bold; /* 文字を太字に */
-  color: var(--active-tab-color); /* タブの文字色 */   
+	font-size:130%;
+	color: var(--active-tab-color); /* タブの文字色 */   
 	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s; /*変化を滑らかに*/
 	user-select: none; /* テキストの範囲選択禁止 */ 
 	white-space: nowrap; /* 半角スペース、タブ、改行をまとめる。自動折り返しなし */
