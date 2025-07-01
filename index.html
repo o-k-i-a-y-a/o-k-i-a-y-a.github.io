@@ -2,10 +2,11 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&amp;display=swap">
 </head>
+
+<script>
 /* ==============================
 /* キャッシュ、オフラインで使用するためにservice-worker.js というファイルを登録
 /* ============================== */
-<script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('./service-worker.js')
