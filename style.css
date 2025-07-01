@@ -84,7 +84,7 @@
 	  content: ''; /* 擬似要素の内容（空） */
 	  clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
 	  opacity: 0; /* 透明度を透明に。フェード用 */
-	  display: block;
+	  /*display: block;*/
 	  transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;  /*変化を滑らかに*/
 	  transform: translateX(100%);  /*ヌルヌル動かす用*/
 	  z-index: 1
