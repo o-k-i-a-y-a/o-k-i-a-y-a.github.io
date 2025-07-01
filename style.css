@@ -55,9 +55,10 @@
 	-webkit-tap-highlight-color: transparent; /* リンクの強調をなくす */
 }
 
-.tab-button:nth-of-type(-n+3){
-	order:-2;
+#TAB02-03-button::after{
+	width:100%;
 }
+
 /* タブのホバーおよび選択時の色 */
 .tab-button:hover,
 .tab-switch:checked + .tab-button{
