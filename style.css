@@ -8,7 +8,7 @@
   	/*width: 1000px; /* コンテナの最大幅を指定 */
   	width:100%;
   	min-width: calc(100vw - 10px*2);
-	/*min-width:1000px;*/
+	width:2000px;
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
