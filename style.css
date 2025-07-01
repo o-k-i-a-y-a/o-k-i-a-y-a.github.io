@@ -5,10 +5,9 @@
 /* タブバー部分の設定 */
 .tab-wrap {
   background: White; /* 背景色 */
-  /*width: 1000px; /* コンテナの最大幅を指定 */
-  width:100%;
-  min-width:1000px;
-	display: flex; /* タブを横並びに */
+  width: 1000px; /* コンテナの最大幅を指定 */
+  /*width:100%;
+  min-width:1000px;*/display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
   gap: 0 5px; /* タブ間の余白 */
