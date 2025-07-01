@@ -55,7 +55,7 @@
 	-webkit-tap-highlight-color: transparent; /* リンクの強調をなくす */
 }
 
-#TAB02-03-button::after{
+#TAB02-03::after{
 	width:100%;
 }
 
