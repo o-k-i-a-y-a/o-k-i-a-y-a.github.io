@@ -19,7 +19,7 @@
 .tab-wrap::before {
 	content: '';
 	height: 0;
-	order: 1; /* コンテンツを下に表示 */
+	order: 2; /* コンテンツを下に表示 */
 	width: 100%;
 }
 
@@ -55,6 +55,9 @@
 	-webkit-tap-highlight-color: transparent; /* リンクの強調をなくす */
 }
 
+.tab-button:nth-of-type(-n+3){
+	order:-2;
+}
 /* タブのホバーおよび選択時の色 */
 .tab-button:hover,
 .tab-switch:checked + .tab-button{
@@ -119,7 +122,7 @@
   .tab-switch:checked + .tab-button + .tab-content {
 	  height: auto; /* 内容に合わせて高さを調整 */
 	  opacity: 1; /* 透明度を不透明に。フェード用 */
-	  order: 1; /* 並び順を最後尾へ */
+	  order: 2; /* 並び順を最後尾へ */
 	  pointer-events:auto; /* 誤動作防止の解除 */
 	  transform: translateX(0); /*ヌルヌル動かす用*/
   }
