@@ -48,6 +48,7 @@
  	position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
 	font-family:"Oswald";
+	font-size: large;
 	font-weight: bold; /* 文字を太字に */
   	color: var(--active-tab-color); /* タブの文字色 */   
 	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s; /*変化を滑らかに*/
