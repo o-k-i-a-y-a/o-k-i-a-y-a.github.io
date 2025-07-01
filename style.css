@@ -6,8 +6,8 @@
 .tab-wrap {
 	background: White; /* 背景色 */
 	/*width: 1000px; /* コンテナの最大幅を指定 */
-	width:100%;
-	min-width:3000px;
+	min-width:100%;
+	/*min-width:3000px;*/
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -35,6 +35,7 @@
 .tab-switch {
 	display: none; /* 実際のラジオボタンは非表示 */
 	height: 20%;
+	bottom:0%
 }
 
 /* 各タブボタンのスタイル設定 */
