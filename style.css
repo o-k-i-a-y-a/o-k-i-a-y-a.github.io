@@ -7,7 +7,7 @@
   	background: White; /* 背景色 */
   	/*width: 1000px; /* コンテナの最大幅を指定 */
   	width:100%;
-  	max-width: calc(100vw - 10px*2);
+  	min-width: calc(100vw - 10px*2);
 	/*min-width:1000px;*/
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
