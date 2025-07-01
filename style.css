@@ -39,10 +39,11 @@
 /* タブの改行用 */
 .tab-switch::after {
     content: '';
-    width: 100%;
+
 }
 .tab-switch:nth-child(n+4) {
-    order: 1;
+	order: 1;
+	width: 100%;
 }
 /* 各タブボタンのスタイル設定 */
 .tab-button {
