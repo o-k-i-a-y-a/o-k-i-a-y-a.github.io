@@ -8,7 +8,6 @@
   	/*width: 1000px; /* コンテナの最大幅を指定 */
   	width:100%;
   	min-width: calc(100vw - 10px*2);
-	width:2000px;
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -64,67 +63,6 @@
     color: #fff; /* ホバー/選択時の文字色 */
 }
 
-
-/* タブの三角形が左右に動く仕組み */
-  /* 1.アクティブなタブより前のボタン */
-  .tab-button::after {
-    position: absolute; /* 三角形をタブ内の特定位置に配置 */
-    bottom: -8px; /* 三角形をタブの下に表示 */
-    left: 50%; /* 中央寄せの調整 */
-    width: 18px; /* 三角形の幅 */
-    height: 9px; /* 三角形の高さ */
-    background-color: var(--active-tab-color); /* 三角形の背景色 */
-    content: ''; /* 擬似要素の内容（空） */
-    clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
-  	opacity: 0; /* 透明度を透明に。フェード用 */
-    display: block;
-    transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;  /*変化を滑らかに*/
-    transform: translateX(100%);  /*ヌルヌル動かす用*/
-	  z-index: 1
-  }
-  /* 2.アクティブなタブより後のボタン(アクティブなタブ含む) */
-  .tab-switch:checked ~ .tab-button::after {
-    transform: translateX(-150%); /*ヌルヌル動かす用*/
-  }
-  /* 3.アクティブなタブのボタン */
-  .tab-switch:checked + .tab-button::after {
-    opacity: 1; /* 透明度を不透明に。フェード用 */
-    transform: translateX(-50%);/* 三角形の中央位置調整 */
-  }
-
-/* ==============================
-/* コンテンツエリアの設定
-/* ============================== */
-/* コンテンツエリアのスタイル設定 */
-  .tab-content {
-    padding: 0 20px;
-    width: 100%;
-    left:0;
-    position: -webkit-sticky;
-	  position: sticky; /* コンテンツエリアの位置を固定 */
-  }
-/* コンテンツが左右に動く仕組み */
-  /* 1.アクティブなタブより前のコンテンツ */
-  .tab-content {
-    height:0; /* 非表示にするために高さを0に */
-    opacity:0; /* 透明度を透明に。フェード用 */
-    pointer-events:none; /* 誤動作防止 */
-    transform: translateX(-30%); /*ヌルヌル動かす用*/
-    transition: transform .3s 80ms, opacity .3s 80ms;  /*変化を滑らかに*/
-  }
-
-/* 2.アクティブなタブより後のコンテンツ(アクティブなタブ含む) */
-  .tab-switch:checked ~ .tab-content {
-    transform: translateX(30%); /*ヌルヌル動かす用*/
-  }
-  /* 3.アクティブなタブのコンテンツ */
-  .tab-switch:checked + .tab-button + .tab-content {
-    height: auto; /* 内容に合わせて高さを調整 */
-    opacity: 1; /* 透明度を不透明に。フェード用 */
-    order: 1; /* 並び順を最後尾へ */
-    pointer-events:auto; /* 誤動作防止の解除 */
-    transform: translateX(0); /*ヌルヌル動かす用*/
-  }
 
 /* ==============================
 /* 全体の設定
