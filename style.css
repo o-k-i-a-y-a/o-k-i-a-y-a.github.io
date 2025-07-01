@@ -14,6 +14,7 @@
 	gap: 0 5px; /* タブ間の余白 */
 	margin: auto; /* コンテナの中央寄せ */
 	/*overflow: visible;*/
+	bottom:0%
 }
 
 .tab-wrap::before {
@@ -35,7 +36,6 @@
 .tab-switch {
 	display: none; /* 実際のラジオボタンは非表示 */
 	height: 20%;
-	bottom:0%
 }
 
 /* 各タブボタンのスタイル設定 */
@@ -68,10 +68,10 @@
   /* 1.アクティブなタブより前のボタン */
   .tab-button::after {
 	  position: absolute; /* 三角形をタブ内の特定位置に配置 */
-	  bottom: -8px; /* 三角形をタブの下に表示 */
+	  top: -8px; /* 三角形をタブの下に表示 */
 	  left: 50%; /* 中央寄せの調整 */
 	  width: 18px; /* 三角形の幅 */
-	  height: 9px; /* 三角形の高さ */
+	  height: -9px; /* 三角形の高さ */
 	  background-color: var(--active-tab-color); /* 三角形の背景色 */
 	  content: ''; /* 擬似要素の内容（空） */
 	  clip-path: polygon(0 0, 100% 0, 50% 100%); /* 三角形の形状を作成 */
@@ -98,8 +98,10 @@
   .tab-content {
 	  font-size: 100%!important; /* 文字を標準に */
 	  padding: 0 20px;
+	  margin-bottom: 40px;
 	  width: 100%;
 	  left:0;
+	  top:0;
 	  position: -webkit-sticky;
 	  position: sticky; /* コンテンツエリアの位置を固定 */
   }
