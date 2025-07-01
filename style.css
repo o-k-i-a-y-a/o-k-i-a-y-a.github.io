@@ -6,8 +6,8 @@
 .tab-wrap {
 	background: White; /* 背景色 */
 	/*width: 1000px; /* コンテナの最大幅を指定 */
-	min-width:100%; /* 横幅の最小値は画面幅＝大きい画面は画面に合わせる */
-	width: max-content; /* 横幅は内容に合わせる */
+	/*min-width:100%; /* 横幅の最小値は画面幅＝大きい画面は画面に合わせる */
+	/*width: max-content; /* 横幅は内容に合わせる */
 	display: flex; /* タブを横並びに */
 	flex-wrap: wrap; /* 幅に応じて折り返し */
 	padding: 0 0 20px; /* タブの内側余白 */
@@ -155,6 +155,8 @@ body {
 	overflow: hidden;
 	overflow-x: auto;
 	position: relative;
+	min-width:100%; /* 横幅の最小値は画面幅＝大きい画面は画面に合わせる */
+	width: max-content; /* 横幅は内容に合わせる */
 }
 
 
