@@ -30,7 +30,7 @@
          <!-- =============================　地図のHTML============================== -->
            <div id="map-wrapper">
                 <div id="map-inner">
-                     <img id="map" src="/image/map_easy3.png" alt="USJ Map" />
+                     <img id="map" src="/image/Map_easy3.png" alt="USJ Map" />
                
                      <!-- 🎯 Marker with Popup -->
                      <img
@@ -47,28 +47,28 @@
                  </div>
                
                  <!-- panzoom.js 読み込み -->
-                 <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
-                 <script>
-                   const panzoom = Panzoom(document.getElementById('map-inner'), {
-                     maxScale: 5,
-                     minScale: 1,
-                     contain: 'outside'
-                   });
-                   document.getElementById('map-wrapper').addEventListener('wheel', panzoom.zoomWithWheel);
-               
-                   function togglePopup(id) {
-                     document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-                     const popup = document.getElementById(id);
-                     if (popup) popup.style.display = 'block';
-                   }
-               
-                   // タップ外ポップ非表示
-                   document.addEventListener('click', (e) => {
-                     if (!e.target.classList.contains('marker')) {
-                       document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-                     }
-                   });
-                 </script>
+                      <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
+                      <script>
+                        const panzoom = Panzoom(document.getElementById('map-inner'), {
+                          maxScale: 5,
+                          minScale: 1,
+                          contain: 'outside'
+                        });
+                        document.getElementById('map-wrapper').addEventListener('wheel', panzoom.zoomWithWheel);
+                    
+                        function togglePopup(id) {
+                          document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+                          const popup = document.getElementById(id);
+                          if (popup) popup.style.display = 'block';
+                        }
+                    
+                        // タップ外ポップ非表示
+                        document.addEventListener('click', (e) => {
+                          if (!e.target.classList.contains('marker')) {
+                            document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+                          }
+                        });
+                      </script>
          <!-- ============================== -->
     </div>
        
@@ -82,7 +82,7 @@
        コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３
     </div>
 
-    <div class="sp"> </div>
+    <div class="sp">  </div>
     
     <input id="TAB02-09" type="radio" name="TAB02" class="tab-switch" /><label class="tab-button" for="TAB02-09">地図</label>
     <div class="tab-content">
