@@ -55,7 +55,8 @@
 	-webkit-tap-highlight-color: transparent; /* リンクの強調をなくす */
 }
 
-.sp {
+.sp::before {
+	content: '';
 	width:100%;
 }
 
