@@ -5,33 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panzoom Test</title>
   <style>
-    #panzoom-area {
-      width: 100%;
-      height: 90vh;
-      overflow: hidden;
-      border: 2px solid #ccc;
-      touch-action: none;
-    }
-    #panzoom-area img {
-      width: 100%;
-      height: auto;
-    }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 1em;
+  background-color: #fff;
+}
+
+.outer {
+  position: relative;
+  width: clamp(300px, 100%, 600px);
+  height: 400px;
+  overflow: hidden;
+  border: 3px solid #555;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+#panzoom {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#panzoom img {
+  width: auto;
+  height: auto;
+  vertical-align: bottom;
+}
   </style>
 </head>
 <body>
-  <div id="panzoom-area">
-    <img src="image/Map_easy3.png" alt="地図" />
+<div class="container">
+  <div class="outer">
+    <div id="panzoom">
+       <img src="image/Map_easy3.png">
+    </div>
   </div>
+</div>
 
   <script src="https://unpkg.com/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
   <script>
-    panzoom(document.getElementById("panzoom-area"));
+    const panzoomEl = document.getElementById('panzoom');
+const instance = panzoom(panzoomEl, {
+  bounds: true,
+  boundsPadding: 0.3,
+  maxZoom: 2,
+  minZoom: 0.1
+});
   </script>
 <!-- CDNからpanzoomを読み込む -->
 <script src="https://unpkg.com/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
 
-<!-- あなたの自作JavaScript -->
-<script src="script.js"></script>
 
 </body>
 </html>
