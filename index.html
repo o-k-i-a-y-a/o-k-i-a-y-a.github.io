@@ -1,6 +1,10 @@
 <head>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&amp;display=swap">
+     <meta charset="UTF-8" />
+     <title>USJ しおりマップ</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="script.js">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&amp;display=swap">
 </head>
 
 <script>
@@ -27,49 +31,28 @@
   <div class="tab-wrap">
     <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-button" for="TAB02-01">7/25</label>
     <div class="tab-content">
-         <!-- =============================　地図のHTML============================== -->
-           <div id="map-wrapper">
-                <div id="map-inner">
-                     <img id="map" src="/image/Map_easy3.png" alt="USJ Map" />
-               
-                     <!-- 🎯 Marker with Popup -->
-                     <img
-                       src="/image/ライド.png"
-                       class="marker"
-                       style="top: 40%; left: 30%;"
-                       onclick="togglePopup('popup1')"
-                     />
-                     <div class="popup" id="popup1" style="top: 40%; left: 30%;">
-                       <img class="logo" src="/image/logo.png" alt="スパイダーマン" />
-                       <a href="pages/spiderman.html">詳細ページへ</a>
-                     </div>
-                   </div>
-                 </div>
-               
-                 <!-- panzoom.js 読み込み -->
-                      <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
-                      <script>
-                        const panzoom = Panzoom(document.getElementById('map-inner'), {
-                          maxScale: 5,
-                          minScale: 1,
-                          contain: 'outside'
-                        });
-                        document.getElementById('map-wrapper').addEventListener('wheel', panzoom.zoomWithWheel);
-                    
-                        function togglePopup(id) {
-                          document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-                          const popup = document.getElementById(id);
-                          if (popup) popup.style.display = 'block';
-                        }
-                    
-                        // タップ外ポップ非表示
-                        document.addEventListener('click', (e) => {
-                          if (!e.target.classList.contains('marker')) {
-                            document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
-                          }
-                        });
-                      </script>
-         <!-- ============================== -->
+     <!-- =============================　地図のHTML============================== -->
+	  <div id="map-container">
+	    <div id="panzoom-area">
+		 <img id="map-image" src="map.png" alt="地図" />
+	
+				<!-- USJアトラクションマーカー（25件） -->
+				<div class="marker" style="top: 10%; left: 10%;" data-name="ドンキーコング">
+				  <img src="marker.png" alt="ドンキーコング" />
+				  <div class="wait-label"></div>
+				  <div class="popup">
+				    <img class="popup-logo" src="/image/logo/ドンキーコング.png" alt="ドンキーコング" />
+				    <div>身長122cm以上／体験時間 約2分</div>
+				    <a href="https://www.usj.co.jp/web/ja/jp/attractions/donkey-kong-country-ride" target="_blank">公式ページ</a>
+				  </div>
+				</div>
+	    </div>
+	  </div>
+	
+	  <script src="https://unpkg.com/@anvaka/panzoom@9.4.0/dist/panzoom.min.js"></script>
+	  <script src="script.js"></script>
+         
+     <!-- ============================== -->
     </div>
        
     <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-button" for="TAB02-02">7/26</label>
