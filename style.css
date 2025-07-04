@@ -41,12 +41,12 @@
 	cursor: pointer;/* ホバー時にポインター表示 */
 	flex: 1 1 auto; /* タブが均等に幅をとる */
 	order: -1; /* コンテンツより上に表示 */
-	padding: 0.35em 0.5em; /* タブの内側余白 */
+	padding: 0.35em 0.1em; /* タブの内側余白 */
 	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
 	position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
 	font-weight: bold; /* 文字を太字に */
-	font-size: 150%!important; /* 文字を大きく */
+	font-size: 130%!important; /* 文字を大きく */
 	width: max-content; /* 横幅は内容に合わせる */	
 	color: var(--active-tab-color); /* タブの文字色 */   
 	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s; /*変化を滑らかに*/
