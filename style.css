@@ -41,7 +41,7 @@
 	cursor: pointer;/* ホバー時にポインター表示 */
 	flex: 1 1 auto; /* タブが均等に幅をとる */
 	order: -1; /* コンテンツより上に表示 */
-	padding: .7em 1em; /* タブの内側余白 */
+	padding: 0.35em 0.5em; /* タブの内側余白 */
 	border-bottom:1px solid var(--active-tab-color); /* タブの下線 */
 	position: relative; /* ::beforeの絶対位置指定に使用 */
 	text-align: center; /* テキストを中央揃え */
