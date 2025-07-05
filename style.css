@@ -189,10 +189,10 @@ body {
     /*width:100%;
     height:100%*/
   }
-  /*#panzoom img {
+  #panzoom img {
   	width:auto;
   	height:auto;
-  	vertical-align:bottom*/
+  	vertical-align:bottom
   }
   
   .marker {
@@ -203,8 +203,8 @@ body {
     cursor: pointer;
   } 
   .marker img {
-    width: 100%;
-    height: 100%;
+    /*width: 100%;
+    height: 100%;*/
     display: block;
   }  
   .wait-label {
