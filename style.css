@@ -175,8 +175,8 @@ body {
 	position:relative;
 	/*width:clamp(300px,100%,600px);
 	height:400px;*/
-	width:90vm;
-	height:90vh;
+	width:70vm;
+	height:70vh;
 	overflow:hidden;
 	border:3px solid #555;
 	border-radius:5px;
