@@ -1,3 +1,12 @@
+const panzoomEl = document.getElementById('panzoom');
+const instance = panzoom(panzoomEl, {
+  bounds: true,
+  boundsPadding: 0.05,
+  maxZoom: 3,
+  minZoom: 0.5,
+  initialZoom: 0.7,
+});
+
 // 地図を初期表示で中央寄せ
 const imgEl = panzoomEl.getElementsByTagName('img')[0];
 const image = new Image();
@@ -10,8 +19,9 @@ image.onload = function () {
     panzoomEl.clientHeight / 2,
     scale
   );
+image.src = imgEl.src;
 
-
+//マーカー  
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
 
