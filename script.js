@@ -3,7 +3,31 @@ const panzoomInstance = panzoom(document.getElementById("panzoom-area"), {
   zoomDoubleClickSpeed: 1,
   maxZoom: 5,
   minZoom: 0.5,
+  initialZoom: 0.5,
 });
+
+const panzoomEl = document.getElementById('panzoom');
+const instance = panzoom(panzoomEl, {
+  smoothScroll: true,
+  bounds: true,
+  boundsPadding: 0.3,
+  maxZoom: 2,
+  minZoom: 0.5
+});
+
+// 地図を初期表示で中央寄せ
+const imgEl = panzoomEl.getElementsByTagName('img')[0];
+const image = new Image();
+image.onload = function () {
+  const dw = panzoomEl.clientWidth / this.naturalWidth;
+  const dh = panzoomEl.clientHeight / this.naturalHeight;
+  const scale = Math.min(dw, dh);
+  instance.zoomAbs(
+    panzoomEl.clientWidth / 2,
+    panzoomEl.clientHeight / 2,
+    scale
+  );
+
 
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
