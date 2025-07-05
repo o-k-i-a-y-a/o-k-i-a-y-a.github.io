@@ -8,7 +8,7 @@ const panzoomInstance = panzoom(document.getElementById("panzoom-area"), {
 
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
-  smoothScroll: true,
+//  smoothScroll: true,
   bounds: true,
   boundsPadding: 0.3,
   maxZoom: 2,
