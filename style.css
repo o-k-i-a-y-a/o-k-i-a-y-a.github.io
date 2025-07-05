@@ -162,15 +162,15 @@ body {
 /* ==============================
 /* 地図の設定
 /* ==============================*/
-.map-container {
-	display:flex; /* タブを横並びに */
+/*.map-container {
+	display:flex;
 	flex-direction:column;
 	align-items:center;
 	width:90vw;
 	height:90vh;
 	padding:10em;
-}
-.outer {
+}*/
+.map-outer {
 	justify-content:center;
 	position:relative;
 	/*width:clamp(300px,100%,600px);
