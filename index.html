@@ -45,11 +45,12 @@
         const panzoomEl = document.getElementById('panzoom');
         const instance = panzoom(panzoomEl, {
           bounds: true,
-          boundsPadding: 0.1,
+          boundsPadding: 0.05,
           maxZoom: 3,
-          minZoom: 0.5
+          minZoom: 0.5,
+          initialZoom: 0.7,
         });
-	image.src = imgEl.src;
+	      image.src = imgEl.src;
       </script>
      <!-- ============================== -->
     </div>
