@@ -95,7 +95,7 @@
 /* コンテンツエリアのスタイル設定 */
   .tab-content {
 	  font-size: 100%!important; /* 文字を標準に */
-	  padding: 0 20px;
+	  padding: 0 10px;
 	  width: 100%;
 	  left:0;
 	  position: -webkit-sticky;
@@ -184,7 +184,7 @@ body {
   #panzoom {
     display:flex;
     position:relative;
-    align-items:center;
+    align-content: center;
     justify-content:center;
     /*width:100%;
     height:100%*/
