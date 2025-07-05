@@ -32,13 +32,24 @@
     <div class="tab-content">
 	<iframe width="90vw" height="70vh" src="test.html"><iframe>
      <!-- =============================　地図のHTML============================== -->
-<!--      <div class="outer">
-        <div id="panzoom">
-          <img src="image/Map_easy3.png">
+      <div class="map-container">
+        <div class="outer">
+          <div id="panzoom">
+             <img src="image/Map_easy3.png">
+          </div>
         </div>
       </div>
+      
       <script src="https://unpkg.com/panzoom@9.4.3/dist/panzoom.min.js"></script>
-      <script src="script.js"></script>
+      <script>
+        const panzoomEl = document.getElementById('panzoom');
+        const instance = panzoom(panzoomEl, {
+          bounds: true,
+          boundsPadding: 0.3,
+          maxZoom: 2,
+          minZoom: 0.1
+        });
+      </script>
      <!-- ============================== -->
     </div>
        
