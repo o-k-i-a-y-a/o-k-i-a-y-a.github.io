@@ -172,7 +172,7 @@ body {
   }
   .outer {
     position:relative;
-    width:95vw;/*clamp(300px,100%,600px);*/
+    /*width:95vw;/*clamp(300px,100%,600px);*/
     height:calc(90vh - 20px*3);/*400px;*/
     /*align-items:center;*/
     /*justify-content:center;*/
