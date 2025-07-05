@@ -190,9 +190,10 @@ body {
     height:100%*/
   }
   #panzoom img {
-  	width:auto;
-  	height:auto;
-  	vertical-align:bottom
+    position:relative;
+    width:auto;
+    height:auto;
+    vertical-align:bottom
   }
   
   .marker {
