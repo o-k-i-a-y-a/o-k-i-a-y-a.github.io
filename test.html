@@ -47,7 +47,12 @@ body{margin:0;background:#fff;color:#333;font-size:1.6rem;letter-spacing:.1em}*/
 <script src="https://unpkg.com/panzoom@9.4.3/dist/panzoom.min.js"></script>
 <script>
   const panzoomEl = document.getElementById('panzoom');
-  const instance = panzoom(panzoomEl);
+  const instance = panzoom(panzoomEl, {
+    bounds: true,
+    boundsPadding: 0.3,
+    maxZoom: 2,
+    minZoom: 0.1
+  });
 </script>
 
 </body>
