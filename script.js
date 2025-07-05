@@ -1,20 +1,3 @@
-const panzoomInstance = panzoom(document.getElementById("panzoom-area"), {
-  smoothScroll: false,
-  zoomDoubleClickSpeed: 1,
-  maxZoom: 5,
-  minZoom: 0.5,
-  initialZoom: 0.5,
-});
-
-const panzoomEl = document.getElementById('panzoom');
-const instance = panzoom(panzoomEl, {
-//  smoothScroll: true,
-  bounds: true,
-  boundsPadding: 0.3,
-  maxZoom: 2,
-  minZoom: 0.5
-});
-
 // 地図を初期表示で中央寄せ
 const imgEl = panzoomEl.getElementsByTagName('img')[0];
 const image = new Image();
