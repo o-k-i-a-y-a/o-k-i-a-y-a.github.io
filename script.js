@@ -20,10 +20,11 @@ image.onload = function () {
 };
 image.src = imgEl.src;
 
-// マーカー  
+// マーカー
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
 
+// 待ち時間取得
 async function fetchWaitTimes() {
   const query = encodeURIComponent(attractionNames.join(","));
   try {
@@ -36,33 +37,50 @@ async function fetchWaitTimes() {
   }
 }
 
+// タップにも対応したイベント登録
+function addClickAndTouchListener(el, handler) {
+  el.addEventListener("click", handler);
+  el.addEventListener("touchstart", handler, { passive: true });
+}
+
 window.addEventListener("load", async () => {
   const waits = await fetchWaitTimes();
+  let openedPopup = null;
 
   markers.forEach(marker => {
     const name = marker.dataset.name;
     const wait = waits[name] ? `${waits[name]}分` : "";
     const label = marker.querySelector(".wait-label");
     const popup = marker.querySelector(".popup");
+    const logo = popup.querySelector(".popup-logo");
 
     if (label && wait) label.textContent = wait;
 
-    marker.addEventListener("click", (e) => {
-      // 他のポップアップを閉じる
-      document.querySelectorAll('.popup').forEach(p => {
-        if (p !== popup) p.style.display = "none";
-      });
-
-      // ポップアップ表示切り替え
-      popup.style.display = (popup.style.display === "block") ? "none" : "block";
-
-      // クリックのバブリング停止
+    // マーカーをクリック/タップで開く
+    addClickAndTouchListener(marker, (e) => {
       e.stopPropagation();
+      if (openedPopup && openedPopup !== popup) {
+        openedPopup.style.display = "none";
+      }
+      popup.style.display = "block";
+      openedPopup = popup;
     });
-  });
 
-  // マップのどこかクリックで全ポップアップを閉じる
-  document.addEventListener("click", () => {
-    document.querySelectorAll('.popup').forEach(p => p.style.display = "none");
+    // ロゴをクリック/タップで閉じる
+    if (logo) {
+      addClickAndTouchListener(logo, (e) => {
+        e.stopPropagation();
+        popup.style.display = "none";
+        openedPopup = null;
+      });
+    }
+
+    // 外をクリック/タップしたら閉じる
+    addClickAndTouchListener(document, (e) => {
+      if (openedPopup && !marker.contains(e.target)) {
+        openedPopup.style.display = "none";
+        openedPopup = null;
+      }
+    });
   });
 });
