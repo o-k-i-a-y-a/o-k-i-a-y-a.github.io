@@ -1,4 +1,4 @@
-const panzoomEl = document.getElementById('map-img');
+const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   maxZoom: 3,
   minZoom: 0.5,
