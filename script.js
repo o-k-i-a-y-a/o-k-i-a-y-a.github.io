@@ -37,10 +37,11 @@ async function fetchWaitTimes() {
   }
 }
 
-// タップにも対応したイベント登録
-function addClickAndTouchListener(el, handler) {
+
+// 共通のタッチ＆クリックイベント追加
+function addClickAndTouch(el, handler) {
   el.addEventListener("click", handler);
-  el.addEventListener("touchstart", handler, { passive: true });
+  el.addEventListener("touchend", handler, { passive: false });
 }
 
 window.addEventListener("load", async () => {
@@ -56,8 +57,8 @@ window.addEventListener("load", async () => {
 
     if (label && wait) label.textContent = wait;
 
-    // マーカーをクリック/タップで開く
-    addClickAndTouchListener(marker, (e) => {
+    // マーカーをクリック・タップでポップアップ表示
+    addClickAndTouch(marker, (e) => {
       e.stopPropagation();
       if (openedPopup && openedPopup !== popup) {
         openedPopup.style.display = "none";
@@ -66,21 +67,25 @@ window.addEventListener("load", async () => {
       openedPopup = popup;
     });
 
-    // ロゴをクリック/タップで閉じる
+    // ロゴをクリック・タップで非表示
     if (logo) {
-      addClickAndTouchListener(logo, (e) => {
+      addClickAndTouch(logo, (e) => {
         e.stopPropagation();
         popup.style.display = "none";
         openedPopup = null;
       });
     }
+  });
 
-    // 外をクリック/タップしたら閉じる
-    addClickAndTouchListener(document, (e) => {
-      if (openedPopup && !marker.contains(e.target)) {
+  // 外側クリック・タップでポップアップを閉じる
+  const closePopupIfOutside = (e) => {
+    if (!e.target.closest('.marker')) {
+      if (openedPopup) {
         openedPopup.style.display = "none";
         openedPopup = null;
       }
-    });
-  });
+    }
+  };
+  document.body.addEventListener("click", closePopupIfOutside);
+  document.body.addEventListener("touchend", closePopupIfOutside, { passive: false });
 });
