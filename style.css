@@ -236,7 +236,7 @@ body {
   }  
   .popup img {
     position: absolute;
-    width: 100%;
+    max-width:50vw;
     height: auto;
     display: block;
     margin-bottom: 4px;
