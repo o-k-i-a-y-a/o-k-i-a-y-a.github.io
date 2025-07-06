@@ -1,6 +1,6 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
-  //bounds: true,
+  bounds: true,
   //boundsPadding: 1,
   maxZoom: 3,
   minZoom: 0.5,
