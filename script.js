@@ -19,6 +19,7 @@ image.onload = function () {
     panzoomEl.clientHeight / 2,
     scale
   );
+};
 image.src = imgEl.src;
 
 //マーカー  
