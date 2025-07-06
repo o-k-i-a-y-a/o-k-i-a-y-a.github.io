@@ -28,7 +28,7 @@ const attractionNames = Array.from(markers).map(m => m.dataset.name);
 async function fetchWaitTimes() {
   const query = encodeURIComponent(attractionNames.join(","));
   try {
-    const res = await fetch(`https://script.google.com/macros/s/AKfyb.../exec?q=${query}`);
+    const res = await fetch(`https://script.google.com/macros/s/AKfycbzB2VNj3Q0oeOeS3lGkrJ3oDvVy2lBAVi6XMXrdBMlq3gYUsMkJF3Zmw299DUW_lFIZgw/exec?q=${query}`);
     const data = await res.json();
     return data.results || {};
   } catch (e) {
