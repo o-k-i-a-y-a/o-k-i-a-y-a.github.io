@@ -1,7 +1,7 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 1,//0.3,
+  boundsPadding: 1,
   maxZoom: 3,
   minZoom: 0.5,
   initialZoom: 0.7,
@@ -22,14 +22,14 @@ image.onload = function () {
 };
 image.src = imgEl.src;
 
-//マーカー  
+// マーカー  
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
 
 async function fetchWaitTimes() {
   const query = encodeURIComponent(attractionNames.join(","));
   try {
-    const res = await fetch(https://script.google.com/macros/s/AKfyb.../exec?q=${query});
+    const res = await fetch(`https://script.google.com/macros/s/AKfyb.../exec?q=${query}`);
     const data = await res.json();
     return data.results || {};
   } catch (e) {
@@ -43,25 +43,28 @@ window.addEventListener("load", async () => {
 
   markers.forEach(marker => {
     const name = marker.dataset.name;
-    const wait = waits[name] ? ${waits[name]}分 : "";
+    const wait = waits[name] ? `${waits[name]}分` : "";
     const label = marker.querySelector(".wait-label");
     const popup = marker.querySelector(".popup");
-    const logo = popup.querySelector(".popup-logo");
 
     if (label && wait) label.textContent = wait;
 
-    marker.addEventListener("click", () => {
-      popup.style.display = "block";
-    });
+    marker.addEventListener("click", (e) => {
+      // 他のポップアップを閉じる
+      document.querySelectorAll('.popup').forEach(p => {
+        if (p !== popup) p.style.display = "none";
+      });
 
-    logo.addEventListener("click", () => {
-      popup.style.display = "none";
-    });
+      // ポップアップ表示切り替え
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
 
-    document.addEventListener("click", e => {
-      if (!marker.contains(e.target)) {
-        popup.style.display = "none";
-      }
+      // クリックのバブリング停止
+      e.stopPropagation();
     });
+  });
+
+  // マップのどこかクリックで全ポップアップを閉じる
+  document.addEventListener("click", () => {
+    document.querySelectorAll('.popup').forEach(p => p.style.display = "none");
   });
 });
