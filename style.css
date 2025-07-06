@@ -200,7 +200,7 @@ body {
   .marker {
     position: absolute;
     width: 20px;
-    height: auto;
+    height: 20px;
     transform: translate(-50%, -100%);
     cursor: pointer;
   } 
@@ -231,10 +231,11 @@ body {
     /*font-size: 12px;*/
     z-index: 1000;
     display: none;
+    width: 100%;
     /*max-width: 200px;*/
   }  
   .popup img {
-    width: 100%;
+    width: auto;
     height: auto;
     display: block;
     margin-bottom: 4px;
@@ -242,9 +243,3 @@ body {
   .popup a {
     color: #87cefa;
   }
-
-/* ← マップズームしても marker/popup のサイズが変わらないように */
-.marker, .popup {
-  transform-origin: top left;
-  will-change: auto;
-}
