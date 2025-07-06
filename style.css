@@ -244,7 +244,7 @@ body {
   }
 
 /* ← マップズームしても marker/popup のサイズが変わらないように */
-/*.marker, .popup {
+.marker, .popup {
   transform-origin: top left;
   will-change: auto;
-}*/
+}
