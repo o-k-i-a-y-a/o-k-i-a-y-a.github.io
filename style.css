@@ -191,8 +191,7 @@ body {
   }
   #panzoom img {
     position:relative;
-    width:auto;
-    height:auto;
+    max-width:none;
     vertical-align:bottom
   }
   
