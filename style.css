@@ -199,8 +199,8 @@ body {
   
   .marker {
     position: absolute;
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
     transform: translate(-50%, -100%);
     cursor: pointer;
   } 
@@ -231,10 +231,11 @@ body {
     /*font-size: 12px;*/
     z-index: 1000;
     display: none;
+    width: auto;
     /*max-width: 200px;*/
   }  
   .popup img {
-    width: auto;
+    width: 100%;
     height: auto;
     display: block;
     margin-bottom: 4px;
