@@ -245,3 +245,8 @@ body {
   .popup a {
     color: #87cefa;
   }
+  /* ← マップズームしても marker/popup のサイズが変わらないように */
+  .marker, .popup {
+    transform-origin: top left;
+    will-change: auto;
+  }
