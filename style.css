@@ -234,9 +234,11 @@ body {
     display: none;
     white-space: nowrap;         /* 文字の折り返しを防ぐ */
     width: max-content;          /* コンテンツに合わせて幅調整 */
-    max-width: 70vw;             /* 画面を超えないよう最大幅を制限 */
+    max-width: 50vw;             /* 画面を超えないよう最大幅を制限 */
     box-sizing: border-box;
     overflow-wrap: break-word;   /* 万が一折り返す必要があるときの保険 */
+    transform: scale(1); /* 拡大縮小の影響を受けない */
+    transform-origin: top left;
   }  
   .popup-logo {
    /* position: absolute;*/
