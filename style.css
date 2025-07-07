@@ -238,7 +238,7 @@ body {
     box-sizing: border-box;
     overflow-wrap: break-word;   /* 万が一折り返す必要があるときの保険 */
   }  
-  .popup img {
+  .popup-logo {
    /* position: absolute;*/
     max-width:100%;/*30vw;*/
     height: auto;
