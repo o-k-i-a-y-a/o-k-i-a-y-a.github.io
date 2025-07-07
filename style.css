@@ -240,7 +240,7 @@ body {
   }  
   .popup-logo {
    /* position: absolute;*/
-    max-width:70w;/*30vw;*/
+    max-width:100%;/*30vw;*/
     height: auto;
     display: block;
     margin-bottom: 4px;
