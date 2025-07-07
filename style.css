@@ -244,7 +244,7 @@ body {
   .popup-logo {
    /* position: absolute;*/
     width:auto;/*30vw;*/
-    height: 20vh;
+    height: 10vh;
     display: block;
     margin-bottom: 4px;
   } 
