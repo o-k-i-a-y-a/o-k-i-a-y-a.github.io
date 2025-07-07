@@ -243,8 +243,8 @@ body {
   }  
   .popup-logo {
    /* position: absolute;*/
-    max-width:100%;/*30vw;*/
-    height: auto;
+    width:auto;/*30vw;*/
+    height: 20vh;
     display: block;
     margin-bottom: 4px;
   } 
