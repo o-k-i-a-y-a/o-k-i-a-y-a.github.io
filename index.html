@@ -61,18 +61,7 @@
         </div>
       </div>
       
-      <script src="https://unpkg.com/panzoom@9.4.3/dist/panzoom.min.js"></script>
-      <script src="script.js"></script>
-      <script>
-        const panzoomEl = document.getElementById('panzoom');
-        const instance = panzoom(panzoomEl, {
-          autocenter: true,
-          //bounds: true,
-          //boundsPadding: 0.5,
-          maxZoom: 3,
-          minZoom: 0.1,
-        });
-      </script>
+
      <!-- ============================== -->
     </div>
        
@@ -115,6 +104,19 @@
 
   </div>      
  </div>
-<!-- 	<script src="https://unpkg.com/@anvaka/panzoom@9.4.0/dist/panzoom.min.js"></script>
-	<script src="script.js"></script> -->
+<!-- ==============================
+     地図用のScript
+<!-- ============================== -->	
+<script src="https://unpkg.com/panzoom@9.4.3/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+<script>
+const panzoomEl = document.getElementById('panzoom');
+const instance = panzoom(panzoomEl, {
+  autocenter: true,
+  //bounds: true,
+  //boundsPadding: 0.5,
+  maxZoom: 3,
+  minZoom: 0.1,
+});
+</script>
 </body>
