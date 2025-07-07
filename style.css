@@ -232,12 +232,11 @@ body {
     /*font-size: 12px;*/
     z-index: 1000;
     display: none;
-/*    width: auto;
-    /*max-width: 200px;*/
-  /* 🆕 幅の自動調整関連 */
-  white-space: nowrap;         /* 文字の折り返しを防ぐ */
-  width: max-content;          /* コンテンツに合わせて幅調整 */
-  max-width: 90vw;             /* 画面を超えないよう最大幅を制限 */
+    white-space: nowrap;         /* 文字の折り返しを防ぐ */
+    width: max-content;          /* コンテンツに合わせて幅調整 */
+    max-width: 90vw;             /* 画面を超えないよう最大幅を制限 */
+    box-sizing: border-box;
+    overflow-wrap: break-word;   /* 万が一折り返す必要があるときの保険 */
   }  
   .popup img {
    /* position: absolute;*/
