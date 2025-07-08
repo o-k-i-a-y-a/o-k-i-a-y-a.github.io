@@ -2,7 +2,7 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 1,
+  boundsPadding: 2.0,
   maxZoom: 3,
   minZoom: 0.2,
   initialZoom: 0.2,
