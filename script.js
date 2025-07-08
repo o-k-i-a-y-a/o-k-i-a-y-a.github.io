@@ -1,4 +1,5 @@
-const panzoomEl = document.getElementById('map-img');
+//const panzoomEl = document.getElementById('map-img');
+const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
   boundsPadding: 0.05,
