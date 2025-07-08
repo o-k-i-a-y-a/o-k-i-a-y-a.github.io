@@ -177,7 +177,7 @@ body {
     height:calc(90vh - 20px*3);/*400px;*/
     /*align-items:center;*/
     /*justify-content:center;*/
-    overflow:visible;
+    overflow:hidden;/*visible;*/
     border:3px solid #555;
     border-radius:5px;
     background-color:#eee
