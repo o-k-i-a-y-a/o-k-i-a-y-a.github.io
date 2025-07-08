@@ -173,7 +173,8 @@ body {
   }
   .outer {
     position:relative;
-    width:100%;/*clamp(300px,100%,600px);*/
+    width: max-content; /* 横幅は内容に合わせる */
+    /*width:4000px;/*clamp(300px,100%,600px);*/
     height:calc(90vh - 20px*3);/*400px;*/
     /*align-items:center;*/
     /*justify-content:center;*/
