@@ -1,5 +1,7 @@
 const panzoomEl = document.getElementById('map-img');
 const instance = panzoom(panzoomEl, {
+  bounds: true,
+  boundsPadding: 0.05,
   maxZoom: 3,
   minZoom: 0.05,
   initialZoom: 0.05,
