@@ -1,8 +1,8 @@
 const panzoomEl = document.getElementById('map-img');
 const instance = panzoom(panzoomEl, {
   maxZoom: 3,
-  minZoom: 0.1,
-  initialZoom: 0.1,
+  minZoom: 0.05,
+  initialZoom: 0.05,
 });
 
 // 地図を初期表示で中央寄せ
