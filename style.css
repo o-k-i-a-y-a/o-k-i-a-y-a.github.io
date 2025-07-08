@@ -184,7 +184,7 @@ body {
     background-color:#eee
   }
   #panzoom {
-    display:flex;
+/*    display:flex;
     position:relative;
     align-content: center;
     justify-content:center;
@@ -192,7 +192,7 @@ body {
     height:100%*/
   }
   #panzoom .inner {
-	  position: relative;
+    position: relative;
   }
   #map-img {
     width:auto;
