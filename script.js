@@ -2,10 +2,11 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 0.01,
+  boundsPadding: 0.001,
   maxZoom: 3,
   minZoom: 0.2,
   initialZoom: 0.2,
+  autocenter: true,
 });
 
 // マーカー
