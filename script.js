@@ -2,27 +2,13 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 0.05,
+  boundsPadding: 0.5,
   maxZoom: 3,
   minZoom: 0.4,
   initialZoom: 0.4,
  // autocenter: true,
 });
 
-// 地図を初期表示で中央寄せ
-const imgEl = panzoomEl.getElementsByTagName('img')[0];
-const image = new Image();
-image.onload = function () {
-  const dw = panzoomEl.clientWidth / this.naturalWidth;
-  const dh = panzoomEl.clientHeight / this.naturalHeight;
-  const scale = Math.min(dw, dh);
-  instance.zoomAbs(
-    panzoomEl.clientWidth / 2,
-    panzoomEl.clientHeight / 2,
-    scale
-  );
-};
-image.src = imgEl.src;
 
 // マーカー
 const markers = document.querySelectorAll('.marker');
