@@ -2,11 +2,11 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 0.5,
+  boundsPadding: 0.05,
   maxZoom: 3,
   minZoom: 0.4,
   initialZoom: 0.4,
-  autocenter: true,
+ // autocenter: true,
 });
 
 // 地図を初期表示で中央寄せ
