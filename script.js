@@ -2,10 +2,10 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
-  boundsPadding: 0.001,
+  boundsPadding: 0.05,
   maxZoom: 3,
-  minZoom: 0.2,
-  initialZoom: 0.2,
+  minZoom: 0.4,
+  initialZoom: 0.8,
   autocenter: true,
 });
 
