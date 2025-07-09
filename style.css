@@ -173,7 +173,7 @@ body {
   }
   .outer {
     position:relative;
-    width: max-content; /* 横幅は内容に合わせる */
+    width:100%; /*max-content; /* 横幅は内容に合わせる */
     /*width:4000px;/*clamp(300px,100%,600px);*/
     height:calc(90vh - 20px*3);/*400px;*/
     /*align-items:center;*/
@@ -184,7 +184,10 @@ body {
     background-color:#eee
   }
   #panzoom {
-/*    display:flex;
+    position: absolute;         /* 固定位置で動かす */
+    top: 0;
+    left: 0;
+	  /*    display:flex;
     position:relative;
     align-content: center;
     justify-content:center;
@@ -193,6 +196,8 @@ body {
   }
   #panzoom .inner {
     position: relative;
+    width: fit-content;
+    height: fit-content;
   }
   #map-img {
     width:auto;
