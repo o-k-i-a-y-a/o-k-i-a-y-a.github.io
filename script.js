@@ -1,4 +1,3 @@
-//const panzoomEl = document.getElementById('map-img');
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
   bounds: true,
@@ -6,7 +5,6 @@ const instance = panzoom(panzoomEl, {
   maxZoom: 3,
   minZoom: 0.4,
   initialZoom: 0.4,
- // autocenter: true,
 });
 
 
@@ -14,19 +12,22 @@ const instance = panzoom(panzoomEl, {
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
 
-// 待ち時間取得
-async function fetchWaitTimes() {
-  const query = encodeURIComponent(attractionNames.join(","));
-  try {
-    const res = await fetch(`https://script.google.com/macros/s/AKfycbzB2VNj3Q0oeOeS3lGkrJ3oDvVy2lBAVi6XMXrdBMlq3gYUsMkJF3Zmw299DUW_lFIZgw/exec?q=${query}`);
-    const data = await res.json();
-    return data.results || {};
-  } catch (e) {
-    console.warn("通信エラー:", e);
-    return {};
-  }
-}
+// Popup固定領域を作成（追加）
+const fixedPopup = document.createElement('div');
+fixedPopup.id = "popup-fixed";
+fixedPopup.className = "popup";
+fixedPopup.style.position = "absolute";
+fixedPopup.style.top = "0";  // outerの上部に固定
+fixedPopup.style.left = "50%";
+fixedPopup.style.transform = "translateX(-50%)";
+fixedPopup.style.zIndex = "10000";
+fixedPopup.style.display = "none";
 
+// outer内に追加（位置固定のため outer に）
+document.querySelector('.outer').appendChild(fixedPopup);
+
+// 選択中マーカー管理用
+let selectedMarker = null;
 
 // 共通のタッチ＆クリックイベント追加
 function addClickAndTouch(el, handler) {
@@ -36,7 +37,6 @@ function addClickAndTouch(el, handler) {
 
 window.addEventListener("load", async () => {
   const waits = await fetchWaitTimes();
-  let openedPopup = null;
 
   markers.forEach(marker => {
     const name = marker.dataset.name;
@@ -47,33 +47,45 @@ window.addEventListener("load", async () => {
 
     if (label && wait) label.textContent = wait;
 
-    // マーカーをクリック・タップでポップアップ表示
+    // ==== 修正開始: マーカーをクリック・タップで popup-fixed 表示 ====
     addClickAndTouch(marker, (e) => {
       e.stopPropagation();
-      if (openedPopup && openedPopup !== popup) {
-        openedPopup.style.display = "none";
-      }
-      popup.style.display = "block";
-      openedPopup = popup;
-    });
 
-    // ロゴをクリック・タップで非表示
+      // 選択中マーカーの強調表示を解除
+      if (selectedMarker) {
+        selectedMarker.classList.remove("selected-marker");
+      }
+
+      // 新しく選択されたマーカーを強調
+      marker.classList.add("selected-marker");
+      selectedMarker = marker;
+
+      // fixedPopup に内容をコピー
+      fixedPopup.innerHTML = popup.innerHTML;
+      fixedPopup.style.display = "block";
+    });
+    // ==== 修正終了 ====
+
+    // 元のポップアップは使わないので非表示のまま
+    popup.style.display = "none";
+
+    // ロゴをクリック・タップで fixedPopup を閉じる
     if (logo) {
       addClickAndTouch(logo, (e) => {
         e.stopPropagation();
-        popup.style.display = "none";
-        openedPopup = null;
+        fixedPopup.style.display = "none";
+        if (selectedMarker) selectedMarker.classList.remove("selected-marker");
+        selectedMarker = null;
       });
     }
   });
 
   // 外側クリック・タップでポップアップを閉じる
   const closePopupIfOutside = (e) => {
-    if (!e.target.closest('.marker')) {
-      if (openedPopup) {
-        openedPopup.style.display = "none";
-        openedPopup = null;
-      }
+    if (!e.target.closest('.marker') && !e.target.closest('#popup-fixed')) {
+      fixedPopup.style.display = "none";
+      if (selectedMarker) selectedMarker.classList.remove("selected-marker");
+      selectedMarker = null;
     }
   };
   document.body.addEventListener("click", closePopupIfOutside);
