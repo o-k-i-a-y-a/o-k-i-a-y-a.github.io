@@ -265,3 +265,31 @@ body {
     transform-origin: top left;
     will-change: auto;
   }
+
+/* ★追加：popup-fixedのスタイル */
+#popup-fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: none;
+  z-index: 10000;
+  box-sizing: border-box;
+  border-bottom: 2px solid #fff;
+}
+
+/* ★追加：選択中マーカー強調 */
+.selected-marker {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+  z-index: 2000;
+}
+
+/* .popup は非表示で維持（既存） */
+.popup {
+  display: none;
+}
+
