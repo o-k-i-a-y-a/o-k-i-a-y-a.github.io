@@ -31,38 +31,33 @@
     <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-button" for="TAB02-01">7/25</label>
     <div class="tab-content">
      <!-- =============================　地図のHTML============================== -->
-      <div class="map-container">
-        <div class="outer">
-          <div id="panzoom">
-          　<div class="inner">
-           　 <div id="map-img">
-              <img src="image/Map_easy3.png"  alt="地図" />
-              <!-- USJアトラクションマーカー（25件） -->
-              <div class="marker" style="top: 10%; left: 10%;" data-name="ドンキーコング">
-                <img src="image/ライド.png" alt="ドンキーコング" />
-                <div class="wait-label"></div>
-                <div class="popup">
-                  <img class="popup-logo" src="/image/logo.png" alt="ドンキーコング" />
-                  <div>身長122cm以上／体験時間 約2分</div>
-                  <a href="https://www.usj.co.jp/web/ja/jp/attractions/donkey-kong-country-ride" target="_blank">公式ページ</a>
-                </div>
-              </div>
-              <div class="marker" style="top: 20%; left: 20%;" data-name="ドンキーコング">
-                <img src="image/ライド.png" alt="ドンキーコング" />
-                <div class="wait-label"></div>
-                <div class="popup">
-                  <img class="popup-logo" src="/image/logo.png" alt="ドンキーコング" />
-                  <div>身長122cm以上／体験時間 約2分</div>
-                  <a href="https://www.usj.co.jp/web/ja/jp/attractions/donkey-kong-country-ride" target="_blank">公式ページ</a>
-                </div>
-              </div>
-              <!-- USJアトラクションマーカー（25件） -->
-        　    </div>
-          　</div>
-          </div>
-        </div>
-      </div>
-      
+     <div class="map-container">
+       <div class="outer">
+         
+         <!-- ✅ 追加：popup-fixedをouterの上部に固定表示 -->
+         <div id="popup-fixed" class="popup-fixed" style="display: none;"></div>
+     
+         <div id="panzoom">
+           <div class="inner">
+             <div id="map-img">
+               <img src="image/Map_easy3.png"  alt="地図" />
+     
+               <!-- USJアトラクションマーカー -->
+               <div class="marker" style="top: 10%; left: 10%;" data-name="ドンキーコング">
+                 <img src="image/ライド.png" alt="ドンキーコング" />
+                 <div class="wait-label"></div>
+                 <div class="popup">
+                   <img class="popup-logo" src="/image/logo.png" alt="ドンキーコング" />
+                   <div>身長122cm以上／体験時間 約2分</div>
+                   <a href="https://www.usj.co.jp/web/ja/jp/attractions/donkey-kong-country-ride" target="_blank">公式ページ</a>
+                 </div>
+               </div>
+               <!-- ...（他のマーカー省略） -->
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
      <!-- ============================== -->
     </div>
