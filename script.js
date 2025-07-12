@@ -1,16 +1,13 @@
 const panzoomEl = document.getElementById('panzoom');
 const instance = panzoom(panzoomEl, {
-  bounds: true,
-  boundsPadding: 0.5,
+  autocenter: true,
   maxZoom: 3,
-  minZoom: 0.4,
-  initialZoom: 0.4,
+  minZoom: 0.1,
 });
 
 const markers = document.querySelectorAll('.marker');
 const attractionNames = Array.from(markers).map(m => m.dataset.name);
 
-// 待ち時間取得
 async function fetchWaitTimes() {
   const query = encodeURIComponent(attractionNames.join(","));
   try {
@@ -23,7 +20,6 @@ async function fetchWaitTimes() {
   }
 }
 
-// ✅ 共通のタッチ＆クリックイベント
 function addClickAndTouch(el, handler) {
   el.addEventListener("click", handler);
   el.addEventListener("touchend", handler, { passive: false });
@@ -31,8 +27,7 @@ function addClickAndTouch(el, handler) {
 
 window.addEventListener("load", async () => {
   const waits = await fetchWaitTimes();
-  const popupFixed = document.getElementById('popup-fixed');
-  let selectedMarker = null;
+  let openedPopup = null;
 
   markers.forEach(marker => {
     const name = marker.dataset.name;
@@ -43,37 +38,51 @@ window.addEventListener("load", async () => {
 
     if (label && wait) label.textContent = wait;
 
-    // ✅ マーカークリック時の処理
     addClickAndTouch(marker, (e) => {
       e.stopPropagation();
 
-      // 既存選択マーカー解除
-      if (selectedMarker && selectedMarker !== marker) {
-        selectedMarker.classList.remove("selected-marker");
+      // 既存のポップアップを閉じる
+      if (openedPopup && openedPopup !== popup) {
+        openedPopup.style.display = "none";
+        if (openedPopup.parentElement === document.body) {
+          document.body.removeChild(openedPopup);
+        }
       }
 
-      // 選択マーカー設定
-      selectedMarker = marker;
-      marker.classList.add("selected-marker");
+      const rect = marker.getBoundingClientRect();
+      popup.style.position = 'fixed';
+      popup.style.top = `${rect.top}px`;
+      popup.style.left = `${rect.left}px`;
+      popup.style.display = 'block';
 
-      // ✅ popupのHTMLをコピーしてpopup-fixedに表示
-      if (popup && popupFixed) {
-        popupFixed.innerHTML = popup.innerHTML;
-        popupFixed.style.display = "block";
-      }
+      document.body.appendChild(popup);
+      openedPopup = popup;
     });
+
+    if (logo) {
+      addClickAndTouch(logo, (e) => {
+        e.stopPropagation();
+        popup.style.display = "none";
+        if (popup.parentElement === document.body) {
+          document.body.removeChild(popup);
+        }
+        openedPopup = null;
+      });
+    }
   });
 
-  // ✅ 画面の外をタップしたときにポップアップを閉じる
   const closePopupIfOutside = (e) => {
-    if (!e.target.closest('.marker')) {
-      popupFixed.style.display = "none";
-      if (selectedMarker) {
-        selectedMarker.classList.remove("selected-marker");
-        selectedMarker = null;
+    if (!e.target.closest('.marker') && !e.target.closest('.popup')) {
+      if (openedPopup) {
+        openedPopup.style.display = "none";
+        if (openedPopup.parentElement === document.body) {
+          document.body.removeChild(openedPopup);
+        }
+        openedPopup = null;
       }
     }
   };
+
   document.body.addEventListener("click", closePopupIfOutside);
   document.body.addEventListener("touchend", closePopupIfOutside, { passive: false });
 });
