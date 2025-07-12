@@ -47,31 +47,50 @@ window.addEventListener("load", async () => {
 
     if (label && wait) label.textContent = wait;
 
-    // マーカーをクリック・タップでポップアップ表示
     addClickAndTouch(marker, (e) => {
       e.stopPropagation();
+
+      // 既存のpopupを非表示に
       if (openedPopup && openedPopup !== popup) {
         openedPopup.style.display = "none";
+        if (openedPopup.parentElement === document.body) {
+          document.body.removeChild(openedPopup);
+        }
       }
-      popup.style.display = "block";
+
+      // 現在のpopupをbodyに移動（fixed配置のため）
+      const rect = marker.getBoundingClientRect();
+      popup.style.position = 'fixed';
+      popup.style.top = `${rect.top}px`;
+      popup.style.left = `${rect.left}px`;
+      popup.style.display = 'block';
+
+      // body直下に移動
+      document.body.appendChild(popup);
       openedPopup = popup;
     });
 
-    // ロゴをクリック・タップで非表示
+    // ロゴクリックで閉じる
     if (logo) {
       addClickAndTouch(logo, (e) => {
         e.stopPropagation();
         popup.style.display = "none";
+        if (popup.parentElement === document.body) {
+          document.body.removeChild(popup);
+        }
         openedPopup = null;
       });
     }
   });
 
-  // 外側クリック・タップでポップアップを閉じる
+  // 外側クリックで閉じる
   const closePopupIfOutside = (e) => {
-    if (!e.target.closest('.marker')) {
+    if (!e.target.closest('.marker') && !e.target.closest('.popup')) {
       if (openedPopup) {
         openedPopup.style.display = "none";
+        if (openedPopup.parentElement === document.body) {
+          document.body.removeChild(openedPopup);
+        }
         openedPopup = null;
       }
     }
