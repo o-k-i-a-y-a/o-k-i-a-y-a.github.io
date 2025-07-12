@@ -252,13 +252,16 @@ body {
 
 
   }  
+
   .popup-logo {
-   /* position: absolute;*/
-    width:auto;/*30vw;*/
-    height: 10vh;
     display: block;
-    margin: 0 auto 4px;  /* 中央 + 下マージン */
-  } 
+    margin: 0 auto 4px;        /* 中央寄せ + 下マージン */
+    max-width: 50vw;           /* 画面幅の60%以内に制限 */
+    max-height: 10vh;          /* 高さも画面の20%以内に制限 */
+    height: auto;
+    width: auto;
+    object-fit: contain;       /* 画像の縦横比を維持して収める */
+  }
   .popup a {
     color: #87cefa;
   }
