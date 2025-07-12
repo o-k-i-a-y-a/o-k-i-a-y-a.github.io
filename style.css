@@ -257,7 +257,7 @@ body {
     width:auto;/*30vw;*/
     height: 10vh;
     display: block;
-    margin-bottom: 4px;
+    margin: 0 auto 4px;  /* 中央 + 下マージン */
   } 
   .popup a {
     color: #87cefa;
