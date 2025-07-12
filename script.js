@@ -59,11 +59,14 @@ window.addEventListener("load", async () => {
       }
 
       // 現在のpopupをbodyに移動（fixed配置のため）
+      // popupの表示位置を中央揃えにする処理（leftを中央にずらす）
       const rect = marker.getBoundingClientRect();
       popup.style.position = 'fixed';
       popup.style.top = `${rect.top}px`;
-      popup.style.left = `${rect.left}px`;
+      popup.style.left = `${rect.left + rect.width / 2}px`;
+      popup.style.transform = 'translate(-50%, -100%)'; // 中央上に表示
       popup.style.display = 'block';
+
 
       // body直下に移動
       document.body.appendChild(popup);
