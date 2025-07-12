@@ -232,23 +232,25 @@ body {
   }
   
   .popup {
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    left:-50%;
     padding: 8px;
     border-radius: 6px;
-    /*font-size: 12px;*/
     z-index: 9999;
     display: none;
-    white-space: nowrap;         /* 文字の折り返しを防ぐ */
-    width: max-content;          /* コンテンツに合わせて幅調整 */
-    max-width: 80vw;             /* 画面を超えないよう最大幅を制限 */
-    min-width:max-content;
+    white-space: nowrap;
+    width: max-content;
+    max-width: 80vw;
+    min-width: max-content;
     box-sizing: border-box;
-    overflow-wrap: break-word;   /* 万が一折り返す必要があるときの保険 */
-    transform: scale(1); /* 拡大縮小の影響を受けない */
-    transform-origin: top left;
+    overflow-wrap: break-word;
+    transform: translate(-50%, -100%); /* ← 中央揃え＋マーカーの上に配置 */
+    transform-origin: top center;
+    text-align: center;               /* ← 中身を中央揃え */
+  }
+
+
   }  
   .popup-logo {
    /* position: absolute;*/
