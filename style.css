@@ -243,6 +243,7 @@ body {
     width: max-content;
     max-width: 60vw!important;
     min-width: max-content;
+    height: 10vh!important;
     box-sizing: border-box;
     overflow-wrap: break-word;
     transform: translate(-50%, -100%); /* ← 中央揃え＋マーカーの上に配置 */
