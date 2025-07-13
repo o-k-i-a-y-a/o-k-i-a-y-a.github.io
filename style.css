@@ -250,12 +250,9 @@ body {
     text-align: center;               /* ← 中身を中央揃え */
   }
 
-
-  }  
-
   .popup-logo {
     display: block;
-    margin: 0 auto 4px;        /* 中央寄せ + 下マージン */
+/*    margin: 0 auto 4px;        /* 中央寄せ + 下マージン */
 /*    max-width: 50vw!important;           /* 画面幅の60%以内に制限 */
 /*    max-height: 10vh;        /* 高さも画面の20%以内に制限 */
     height: 10vh!important;
