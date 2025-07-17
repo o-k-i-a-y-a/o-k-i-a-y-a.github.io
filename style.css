@@ -284,7 +284,7 @@ body {
   display:inline-block;
   transform:rotate(-90deg);
 }
-.tab-switch:checked+.tab-label2:before {
+.tab-switch2:checked+.tab-label2:before {
   transform:rotate(0);
 }
 .tab-content2 {
@@ -294,10 +294,10 @@ body {
   opacity: 0;
 }
 /* アクティブなタブ */
-.tab-switch:checked+.tab-label2 {
+.tab-switch2:checked+.tab-label2 {
   background: DeepSkyBlue;
 }
-.tab-switch:checked+.tab-label2+.tab-content2 {
+.tab-switch2:checked+.tab-label2+.tab-content2 {
   height: auto;
   overflow: auto;
   margin-bottom: -1px;
@@ -307,7 +307,7 @@ body {
   border: 1px solid LightGray;
 }
 /* ラジオボタン非表示 */
-.tab-switch {
+.tab-switch2 {
   display: none;
 }
   /* ← マップズームしても marker/popup のサイズが変わらないように */
