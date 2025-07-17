@@ -262,6 +262,54 @@ body {
   .popup a {
     color: #87cefa;
   }
+
+/* ==============================
+/* コンテンツエリアの設定
+/* ============================== */
+
+.tab-label2 {
+  color: White;
+  background: LightGray;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+  margin-bottom: -1px;
+  padding: 10px .5em;
+  border: 1px solid rgba(0,0,0,.2);
+  cursor: pointer;
+  display: block;
+}
+.tab-label2:before {
+  content: '▼';
+  margin-right: .2em;
+  display:inline-block;
+  transform:rotate(-90deg);
+}
+.tab-switch:checked+.tab-label:before {
+  transform:rotate(0);
+}
+.tab-content {
+  height: 0;
+  padding: 0 15px;
+  overflow: hidden;
+  opacity: 0;
+}
+/* アクティブなタブ */
+.tab-switch:checked+.tab-label {
+  background: DeepSkyBlue;
+}
+.tab-switch:checked+.tab-label+.tab-content {
+  height: auto;
+  overflow: auto;
+  margin-bottom: -1px;
+  padding: 15px;
+  opacity: 1;
+  transition: .5s;
+  border: 1px solid LightGray;
+}
+/* ラジオボタン非表示 */
+.tab-switch {
+  display: none;
+}
   /* ← マップズームしても marker/popup のサイズが変わらないように */
   .marker, .popup {
     transform-origin: top left;
