@@ -284,20 +284,20 @@ body {
   display:inline-block;
   transform:rotate(-90deg);
 }
-.tab-switch:checked+.tab-label:before {
+.tab-switch:checked+.tab-label2:before {
   transform:rotate(0);
 }
-.tab-content {
+.tab-content2 {
   height: 0;
   padding: 0 15px;
   overflow: hidden;
   opacity: 0;
 }
 /* アクティブなタブ */
-.tab-switch:checked+.tab-label {
+.tab-switch:checked+.tab-label2 {
   background: DeepSkyBlue;
 }
-.tab-switch:checked+.tab-label+.tab-content {
+.tab-switch:checked+.tab-label2+.tab-content2 {
   height: auto;
   overflow: auto;
   margin-bottom: -1px;
