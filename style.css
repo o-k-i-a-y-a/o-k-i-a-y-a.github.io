@@ -51,7 +51,35 @@
 .tab-switch {
   display: none;
 }
-  .marker, .popup {
-    transform-origin: top left;
-    will-change: auto;
-  }
+
+#HW {
+  background-color: #884fdd;
+}
+
+#NY {
+  background-color: #46724f;
+}
+
+#MI {
+  background-color: #feff32;
+}
+
+#SF {
+  background-color: #ffaa01;
+}
+
+#JP {
+  background-color: #7aff00;
+}
+
+#AM {
+  background-color: #fd81cb;
+}
+
+#HP {
+  background-color: #1a2597;
+}
+
+#UW {
+  background-color: #5bc0ff;
+}
