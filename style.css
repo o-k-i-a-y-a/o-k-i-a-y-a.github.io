@@ -4,7 +4,7 @@
 /* ============================== */
 .tab-icon {
   width: auto;
-  height: 36px;
+  height: 28px;
   object-fit: contain; /* アスペクト比を維持したまま収める */
 }
 .tab-label {
@@ -67,7 +67,6 @@
 
 #SF {
   background-color: #ffaa01;
-  color: black;
 }
 
 #JP {
