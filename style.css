@@ -97,13 +97,13 @@
 }
 
 .content-item img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100w;
+  height: 15vh;
+  width:auto;
   display: block;
   margin-bottom: 8px;
 }
 
 .description {
-  font-size: 14px;
   line-height: 1.6;
 }
