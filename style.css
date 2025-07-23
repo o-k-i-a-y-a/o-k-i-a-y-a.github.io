@@ -11,7 +11,7 @@
   object-fit: contain; /* アスペクト比を維持したまま収める */
 }
 .tab-label {
-  color: White;
+ /* color: White;*/
   background: LightGray;
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0,0,0,.2);
