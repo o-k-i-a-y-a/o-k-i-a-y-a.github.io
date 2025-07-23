@@ -18,6 +18,7 @@
   cursor: pointer;
   display: block;
   gap:2px;
+  mix-blend-mode:difference;
 }
 .tab-label:before {
   content: '▼';
@@ -62,7 +63,6 @@
 
 #MI {
   background-color: #feff32;
-  color: black;
 }
 
 #SF {
@@ -71,7 +71,6 @@
 
 #JP {
   background-color: #7aff00;
-  color: black;
 }
 
 #AM {
