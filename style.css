@@ -3,8 +3,8 @@
 /* タブボタンの設定
 /* ============================== */
 .tab-icon {
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: 36px;
   object-fit: contain; /* アスペクト比を維持したまま収める */
 }
 .tab-label {
@@ -62,14 +62,17 @@
 
 #MI {
   background-color: #feff32;
+  color: black;
 }
 
 #SF {
   background-color: #ffaa01;
+  color: black;
 }
 
 #JP {
   background-color: #7aff00;
+  color: black;
 }
 
 #AM {
