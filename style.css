@@ -1,11 +1,13 @@
-body {
-  font-family:Oswald
-}
-
 .tab-wrap {
   width:100vw
 }
 
+.body {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  /*font-weight: <weight>;*/
+  font-style: normal;
+}
 
 /* ==============================
 /* タブボタンの設定
